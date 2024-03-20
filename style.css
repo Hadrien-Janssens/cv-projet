@@ -29,6 +29,7 @@ section {
   transition: 0.5s ease-out;
   z-index: 90;
 }
+
 .marge p span {
   color: rgb(241, 150, 14);
 }
@@ -63,17 +64,28 @@ section {
   background-color: rgb(255, 255, 255);
   z-index: 70;
   transform: translateX(0);
-  animation: rideau 1s forwards;
+  /* animation: rideau 1s forwards; */
+  animation-name: rideau;
+  -webkit-animation-name: rideau;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
   animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
 }
 @keyframes rideau {
   0% {
     transform: translateX(0);
+    opacity: 1;
   }
   99% {
+    opacity: 1;
     transform: translateX(100vw);
   }
   100% {
+    opacity: 0;
+    z-index: -100;
     display: none;
   }
 }
@@ -187,7 +199,7 @@ h2 span:hover {
   height: 3px;
   position: absolute;
   left: 0;
-  transform: translate(0px, -3px);
+  transform: translate(0px, -px);
   z-index: 11;
   background-color: rgb(19, 19, 19);
 }
@@ -438,6 +450,7 @@ main {
   position: absolute;
   left: 0;
   width: 100vw;
+  height: 90px;
   font-size: 60px;
   padding: 5px 0;
   border-top: 3px solid black;

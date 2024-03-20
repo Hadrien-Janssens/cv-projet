@@ -1,3 +1,170 @@
+import cv from "/cv.json";
+
+document.querySelector("#app").innerHTML = `
+
+ <div class="rideau-haut"></div>
+    <section>
+      <div class="marge">
+        <p><span>C</span>urriculum <span>V</span>itae,</p>
+      </div>
+
+      <div class="cv">
+        <div class="header-container">
+          <div class="header">
+            <!-- <div class="rideau-haut"></div> -->
+            <div class="relative">
+              <div id="itsme">c'est moi</div>
+              <div class="sun"></div>
+              <img class="itsme" src="./Vector 5.svg" alt="" />
+              <h2>
+                <span class="lettre-hover">H</span
+                ><span class="lettre-hover">a</span
+                ><span class="lettre-hover">d</span
+                ><span class="lettre-hover">r</span
+                ><span class="lettre-hover">i</span
+                ><span class="lettre-hover">e</span
+                ><span class="lettre-hover">n</span
+                ><span class="lettre-hover"> </span
+                ><span class="lettre-hover">J</span
+                ><span class="lettre-hover">a</span
+                ><span class="lettre-hover">n</span
+                ><span class="lettre-hover">s</span
+                ><span class="lettre-hover">s</span
+                ><span class="lettre-hover">e</span
+                ><span class="lettre-hover">n</span
+                ><span class="lettre-hover">s</span>
+              </h2>
+              <div class="accroche">
+                <p class="absolute">
+                  ${cv.accroche}
+                </p>
+              </div>
+            </div>
+            <figure>
+              <img src="./IMG_4809.PNG" width="250px" />
+            </figure>
+          </div>
+          <div class="bg-grey">
+            <div class="petite-boule"></div>
+          </div>
+          <div class="page-blanche"></div>
+
+          <div class="skill">
+            <div class="circle">
+              <div class="text">
+                <p>- curriculum vitae - hadrien janssens</p>
+              </div>
+            </div>
+            <div class="hover-me">
+              <p>Survol mes compétences..</p>
+            </div>
+            <div class="fleche"><img src="./Vector 2.svg" alt="" /></div>
+            <div class="skills">
+              <!-- <div class="circle">
+                <div class="text">
+                  <p></p>
+                </div>
+              </div> -->
+              <h2>SKILLS</h2>
+              <div class="skill-flex">
+                <p>Adobe XD</p>
+                <div class="adobe-jauge">
+                  <div class="level"></div>
+                </div>
+              </div>
+              <div class="skill-flex">
+                <p>Figma</p>
+                <div class="figma-jauge">
+                  <div class="level"></div>
+                </div>
+              </div>
+              <div class="skill-flex">
+                <p>Photoshop</p>
+                <div class="photoshop-jauge">
+                  <div class="level"></div>
+                </div>
+              </div>
+              <div class="skill-flex">
+                <p>HTML</p>
+                <div class="html-jauge">
+                  <div class="level"></div>
+                </div>
+              </div>
+              <div class="skill-flex">
+                <p>CSS / SASS</p>
+                <div class="css-jauge">
+                  <div class="level"></div>
+                </div>
+              </div>
+              <div class="skill-flex">
+                <p>Javascript</p>
+                <div class="javascript-jauge">
+                  <div class="level"></div>
+                </div>
+              </div>
+              <div class="skill-flex">
+                <p>PHP</p>
+                <div class="php-jauge">
+                  <div class="level"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <main>
+          <div class="about-me card active">
+            <h3 class="undisplay">#01</h3>
+            <h2>#Info</h2>
+            <div class="">
+              <p class="big">INFO</p>
+              <p>${cv.dateNaissance}</p>
+              <p>${cv.mail}</p>
+              <p>${cv.adresse}</p>
+            </div>
+          </div>
+          <div class="diplome card">
+            <h3 class="">#02</h3>
+            <h2>#Diplome</h2>
+            <div class="undisplay">
+              <p class="big">DIPLOME</p>
+              ${cv.diplome.map((el) => `<p>${el}</p>`).join("")}
+            </div>
+          </div>
+          <div class="valeur card">
+            <h3 class="">03</h3>
+            <h2>#Valeur</h2>
+
+            <div class="undisplay">
+              <p class="big">VALEUR</p>
+              ${cv.valeur.map((el) => `<p>${el}</p>`).join("")}
+            </div>
+          </div>
+          <div class="passion card">
+            <h3>#04</h3>
+            <h2>#Passion</h2>
+
+            <div class="undisplay">
+              <p class="big">PASSION</p>
+              ${cv.passion.map((el) => `<p>${el}</p>`).join("")}
+            </div>
+          </div>
+        </main>
+        <div class="bandeau">
+          <p>
+            developpeur web developpeur web developpeur web developpeur web
+            developpeur web developpeur web developpeur web developpeur web
+            developpeur web developpeur web developpeur web developpeur web
+            developpeur web developpeur web developpeur web developpeur web
+            developpeur web developpeur web developpeur web developpeur web
+            developpeur web developpeur web developpeur web developpeur web
+            &nbsp;
+          </p>
+        </div>
+      </div>
+    </section>
+
+`;
+
 const cards = document.querySelectorAll(".card");
 
 cards.forEach((el) => {
